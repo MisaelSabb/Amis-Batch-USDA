@@ -135,7 +135,8 @@
       </div>
       <div class="col-sm-4">         
          <!-- Form submit button -->
-         <button id="btnSubmit" class="btn btn-primary btn-sm" onclick="submitForm(); return false;">REQUEST UPDATE DATA</button>
+         <button id="btnSubmit" class="btn btn-primary btn-sm" onclick="submitForm(false); return false;">REQUEST UPDATE DATA</button>         
+         <button id="btnSubmitNewSeason" style="margin-top:10px;" class="btn btn-primary btn-sm" onclick="submitForm(true); return false;">REQUEST UPDATE DATA WITH NEW SEASON</button>
          <!-- Show Progress -->
          <div id="progress"></div>
       </div>
@@ -151,12 +152,14 @@
 </script>
 
 <script>  
-  function submitForm() {    
+  function submitForm(bool) {    
+   console.info('bool',bool);
     showMessage("Request Update...");
     $( "#btnSubmit" ).prop( "disabled", true );
-     google.script.run
+    $( "#btnSubmitNewSeason" ).prop( "disabled", true );
+    google.script.run
       .withSuccessHandler(showMessage)
-      .requestUpdate();
+      .requestUpdate(bool);    
   }
   function showMessage(e) {
     $('#progress').html(e);

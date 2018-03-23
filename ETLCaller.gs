@@ -7,7 +7,7 @@ var ETLCaller = new function() {
 	 * @param  {string} countryLabel label of the country
 	 * @return  NO RETURN	 
 	 */
-	 this.runETLJob = function(countryLabel) {
+	 this.runETLJob = function(bool) {
  	   var options = {};
        options.headers = {"Authorization": "Basic " + Utilities.base64Encode(Config.ETLUser + ":" + Config.ETLPsw)};
        options.method="POST";
@@ -16,8 +16,8 @@ var ETLCaller = new function() {
          "headers":{"Authorization": "Basic " + Utilities.base64Encode(Config.ETLUser + ":" + Config.ETLPsw)}
        };
 
-       var resp= UrlFetchApp.fetch( Config.ETLEndpoints, options );
-       Logger.log(resp);
+       var resp= bool ? UrlFetchApp.fetch( Config.ETLEndpointsNewSeason, options ) : UrlFetchApp.fetch( Config.ETLEndpoints, options );
+       Logger.log(bool);
        Logger.log(resp.getResponseCode());       
  	};	
 

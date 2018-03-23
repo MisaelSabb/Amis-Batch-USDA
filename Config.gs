@@ -9,6 +9,11 @@ var Config={
 	 */
     ETLEndpoints:"",
   
+  /**
+	 * ETL ENDPOINTS
+	 * @type {String}
+	 */
+    ETLEndpointsNewSeason:"",
     /**
 	 * ETL User
 	 * @type {String}

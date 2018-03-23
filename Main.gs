@@ -8,7 +8,7 @@ function doGet(e) {
     .setTitle("");
 }
 
-function requestUpdate() {
-  ETLCaller.runETLJob();
+function requestUpdate(bool) {
+  ETLCaller.runETLJob(bool);
   return ""; 
 }
