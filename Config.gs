@@ -3,26 +3,19 @@
  * @type {Object}
  */
 var Config={  
-    /**
-	 * ETL ENDPOINTS
-	 * @type {String}
-	 */
-    ETLEndpoints:"",
-  
   /**
 	 * ETL ENDPOINTS
 	 * @type {String}
-	 */
-    ETLEndpointsNewSeason:"",
+	 */    
+    ETLEndpoints:"",
     /**
-	 * ETL User
+	 * ETL ETLjobNameAndParameters
 	 * @type {String}
 	 */	
-    ETLUser:"",  
-  
-     /**
-	 * ETL Psw
+    ETLjobNameAndParameters:"",    
+    /**
+	 * ETL ETLjobNameAndParameters
 	 * @type {String}
 	 */	
-    ETLPsw:""
+    ETLjobNameAndParametersNewSeason:"" 
 };

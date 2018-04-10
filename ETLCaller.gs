@@ -8,15 +8,20 @@ var ETLCaller = new function() {
 	 * @return  NO RETURN	 
 	 */
 	 this.runETLJob = function(bool) {
- 	   var options = {};
-       options.headers = {"Authorization": "Basic " + Utilities.base64Encode(Config.ETLUser + ":" + Config.ETLPsw)};
-       options.method="POST";
-       options={
-         "method":"GET",
-         "headers":{"Authorization": "Basic " + Utilities.base64Encode(Config.ETLUser + ":" + Config.ETLPsw)}
+       
+ 	   var options={
+         'method' : 'post',
+         'contentType': 'application/json',         
+         'payload' : JSON.stringify({"jobNameAndParameters":Config.ETLjobNameAndParameters})
+       };
+       
+       var optionsNewSeason={
+         'method' : 'post',
+         'contentType': 'application/json',         
+         'payload' : JSON.stringify({"jobNameAndParameters":Config.ETLjobNameAndParametersNewSeason})
        };
 
-       var resp= bool ? UrlFetchApp.fetch( Config.ETLEndpointsNewSeason, options ) : UrlFetchApp.fetch( Config.ETLEndpoints, options );
+       var resp= bool ? UrlFetchApp.fetch( Config.ETLEndpoints, optionsNewSeason ) : UrlFetchApp.fetch( Config.ETLEndpoints, options );
        Logger.log(bool);
        Logger.log(resp.getResponseCode());       
  	};	
