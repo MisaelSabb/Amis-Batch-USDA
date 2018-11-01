@@ -4,10 +4,11 @@ function LIB_FUNC(){AmisLib.Utility.LIB_FUNC.apply(this, arguments);}
 function doGet(e) {
   return HtmlService
     .createHtmlOutputFromFile('forms.html')
-    .setTitle("");
+    .setTitle("AMIS USDA UPLOAD");
 }
 
 function requestUpdate(bool) {
   ETLCaller.runETLJob(bool);
-  return ""; 
+  ETLCaller.runCloudETLJob(bool);
+  return "Request registered. Please check the AMIS WEB SITE later."; 
 }

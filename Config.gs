@@ -17,5 +17,10 @@ var Config={
 	 * ETL ETLjobNameAndParameters
 	 * @type {String}
 	 */	
-    ETLjobNameAndParametersNewSeason:"" 
+    ETLjobNameAndParametersNewSeason:"",
+    /**
+	 * ETL ETLCloudEndpoints
+	 * @type {String}
+	 */	
+    ETLCloudEndpoints:""
 };
