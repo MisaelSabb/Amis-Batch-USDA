@@ -9,6 +9,6 @@ function doGet(e) {
 
 function requestUpdate(bool) {
   ETLCaller.runETLJob(bool);
-  ETLCaller.runCloudETLJob(bool);
+  //ETLCaller.runCloudETLJob(bool);
   return "Request registered. Please check the AMIS WEB SITE later."; 
 }
