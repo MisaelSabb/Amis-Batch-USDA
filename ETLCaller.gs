@@ -30,7 +30,7 @@ var ETLCaller = new function() {
 	 * @param  {string} countryLabel label of the country
 	 * @return  NO RETURN	 
 	 */
-	 this.runCloudETLJob = function() {
+	 this.runCloudETLJob = function(bool) {
       var options={
          'method' : 'post',
          'contentType': 'application/json',         
